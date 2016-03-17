@@ -250,7 +250,7 @@ module RecordCache
       alias :visit_Arel_Attributes_Time      :visit_Arel_Attributes_Attribute
       alias :visit_Arel_Attributes_Boolean   :visit_Arel_Attributes_Attribute
       alias :visit_Arel_Attributes_Decimal   :visit_Arel_Attributes_Attribute
-
+      alias :visit_Arel_Attributes_Uuid   :visit_Arel_Attributes_Attribute
       def visit_Arel_Nodes_Equality o, attribute
         key, value = visit(o.left), visit(o.right)
         # several different binding markers exist depending on the db driver used (MySQL, Postgress supported)
