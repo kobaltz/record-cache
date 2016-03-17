@@ -214,7 +214,7 @@ module RecordCache
         @cacheable = o.projections.none?{ |projection| projection.to_s =~ /distinct/i } unless o.projections.empty? if @cacheable
       end
 
-      def visit_Arel_Nodes_SelectStatement o, attribute
+      def visit_Arel_Nodes_SelectStatement o, attribute=nil
         @cacheable = false if o.cores.size > 1
         if @cacheable
           visit o.offset
